@@ -3,7 +3,7 @@ import ConjugacyDiametersPORC.MainTheorem
 /-!
 # Kernel-dependency checks for the main results
 
-These checks run as part of the library build. Any additional axiom in either
+These checks run as part of the library build. Any additional axiom in any
 main result's dependencies changes the message and makes the build fail.
 -/
 
@@ -20,3 +20,17 @@ info: 'ConjugacyDiametersPORC.diameter_eventual_recurrence_with_slope' depends o
 -/
 #guard_msgs (whitespace := lax) in
 #print axioms ConjugacyDiametersPORC.diameter_eventual_recurrence_with_slope
+
+/--
+info: 'ConjugacyDiametersPORC.finiteUnion_diameter_eventuallyAffinePORC' depends on axioms:
+[propext, Classical.choice, Quot.sound]
+-/
+#guard_msgs (whitespace := lax) in
+#print axioms ConjugacyDiametersPORC.finiteUnion_diameter_eventuallyAffinePORC
+
+/--
+info: 'ConjugacyDiametersPORC.finiteUnion_diameter_eventual_recurrence_with_slope' depends on axioms:
+[propext, Classical.choice, Quot.sound]
+-/
+#guard_msgs (whitespace := lax) in
+#print axioms ConjugacyDiametersPORC.finiteUnion_diameter_eventual_recurrence_with_slope
